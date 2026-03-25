@@ -140,8 +140,8 @@ export default function About() {
 
           {/* Bottom nav */}
           <div className="about-bottom-nav">
-            <Link href="/projects" className="arrow-link">
-              Lets Continue To Projects <span><HiArrowLongRight size={22} /></span>
+            <Link href="/resume" className="arrow-link">
+              See the full story on paper <span><HiArrowLongRight size={22} /></span>
             </Link>
           </div>
         </div>

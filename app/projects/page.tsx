@@ -296,7 +296,7 @@ export default function Projects() {
 
           <div className="projects-bottom-nav">
             <Link href="/contact" className="arrow-link">
-              Lets Go To Contact <span><HiArrowLongRight size={22} /></span>
+              Like what you see? Let's talk <span><HiArrowLongRight size={22} /></span>
             </Link>
           </div>
         </div>
