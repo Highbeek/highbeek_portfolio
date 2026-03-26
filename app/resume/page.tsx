@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function Resume() {
   return (
     <>
+      <span className="page-watermark" aria-hidden="true">Resumé.</span>
       <main className="page-main">
         <div className="page-wrap">
           <h1 className="page-title anim-fade-up anim-d1">Resumé.</h1>

@@ -20,6 +20,7 @@ export default function Contact() {
 
   return (
     <>
+      <span className="page-watermark page-watermark--bottom" aria-hidden="true">Contact.</span>
       <main className="page-main">
         <div className="page-wrap">
           <h1 className="page-title anim-fade-up anim-d1">Contact.</h1>

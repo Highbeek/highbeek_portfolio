@@ -47,12 +47,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="light"
+      data-theme="dark"
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${abrilFatface.variable}`}
     >
-      <body>
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()` }} />
+      <body suppressHydrationWarning>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t)}catch(e){}})()` }} />
         <ThemeProvider>
           <Cursor />
           <div className="grid-bg" aria-hidden="true" />

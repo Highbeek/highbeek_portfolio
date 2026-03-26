@@ -70,6 +70,7 @@ const ACHIEVEMENTS = [
 export default function About() {
   return (
     <>
+      <span className="page-watermark" aria-hidden="true">About.</span>
       <main className="page-main">
         <div className="page-wrap">
           <h1 className="page-title anim-fade-up anim-d1">About Me.</h1>

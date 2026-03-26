@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTheme } from "@/components/ThemeProvider";
 function AsteriskLogo() {
   return (
@@ -34,6 +35,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggle } = useTheme();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -56,7 +58,7 @@ export default function Navbar() {
         <div className="nav-right">
           <nav aria-label="Primary navigation">
             <ul className="nav-links">
-              {NAV_ITEMS.map((item) => (
+              {NAV_ITEMS.filter((item) => item.href !== pathname).map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} className="nav-link">
                     {item.label}
@@ -92,7 +94,7 @@ export default function Navbar() {
         aria-hidden={!menuOpen}
       >
         <ul className="nav-mobile-links">
-          {NAV_ITEMS.map((item) => (
+          {NAV_ITEMS.filter((item) => item.href !== pathname).map((item) => (
             <li key={item.label}>
               <Link
                 href={item.href}

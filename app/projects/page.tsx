@@ -226,6 +226,7 @@ export default function Projects() {
 
   return (
     <>
+      <span className="page-watermark" aria-hidden="true">Projects.</span>
       <main className="page-main">
         <div className="page-wrap">
           <h1 className="page-title anim-fade-up anim-d1">Projects.</h1>

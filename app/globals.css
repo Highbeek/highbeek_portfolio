@@ -1328,3 +1328,33 @@ a, button, [role="button"] {
   .filter-bar { gap: 6px; }
   .filter-btn { padding: 6px 14px; font-size: 12px; }
 }
+
+/* ==============================
+   PAGE WATERMARK
+   ============================== */
+.page-watermark {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: rotate(-90deg) translateX(-50%);
+  transform-origin: left top;
+  font-family: var(--font-abril-fatface, serif);
+  font-size: clamp(160px, 18vw, 240px);
+  font-weight: 400;
+  color: var(--text);
+  opacity: 0.045;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  letter-spacing: 0.02em;
+}
+
+/* contact/bottom: shift anchor to lower-third of screen */
+.page-watermark--bottom {
+  top: 72%;
+}
+
+@media (max-width: 1024px) {
+  .page-watermark { display: none; }
+}
