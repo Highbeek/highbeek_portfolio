@@ -8,14 +8,27 @@ import { HiArrowLongRight } from "react-icons/hi2";
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // Wire up to your preferred email service (Resend, Formspree, etc.)
-    // For now, open mailto as fallback
-    const mailto = `mailto:ibukunagboola.dev@gmail.com?subject=Portfolio enquiry from ${encodeURIComponent(form.name)}&body=${encodeURIComponent(form.message)}`;
-    window.location.href = mailto;
-    setSent(true);
+    setLoading(true);
+    setError("");
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    setLoading(false);
+
+    if (res.ok) {
+      setSent(true);
+    } else {
+      setError("Something went wrong. Please try again or email me directly.");
+    }
   };
 
   return (
@@ -35,16 +48,10 @@ export default function Contact() {
           {sent ? (
             <div className="anim-fade-up anim-d3" style={{ maxWidth: 540 }}>
               <p style={{ fontSize: "18px", fontWeight: 600, marginBottom: "12px" }}>
-                Message opened in your mail client.
+                Message sent!
               </p>
               <p style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.7 }}>
-                Alternatively, email me directly at{" "}
-                <a
-                  href="mailto:ibukunagboola.dev@gmail.com"
-                  style={{ color: "var(--text)", textDecoration: "underline", textUnderlineOffset: "3px" }}
-                >
-                  ibukunagboola.dev@gmail.com
-                </a>
+                Thanks for reaching out — I'll get back to you soon.
               </p>
             </div>
           ) : (
@@ -97,8 +104,14 @@ export default function Contact() {
                 />
               </div>
 
-              <button type="submit" className="form-submit">
-                Send Message
+              {error && (
+                <p style={{ fontSize: "14px", color: "var(--accent-magenta)", marginBottom: "12px" }}>
+                  {error}
+                </p>
+              )}
+
+              <button type="submit" className="form-submit" disabled={loading}>
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </form>
           )}
