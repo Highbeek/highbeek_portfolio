@@ -18,23 +18,32 @@ const abrilFatface = Abril_Fatface({
 });
 
 export const metadata: Metadata = {
-  title: "Ibukun Agboola | Senior React Native & Frontend Engineer",
+  title: "Ibukun Agboola | Software Engineer",
   description:
-    "Senior React Native & Frontend Engineer with 4+ years building scalable fintech, crypto, and marketplace applications used by 40K+ users.",
+    "I build mobile and web products that scale. 4+ years shipping React Native and frontend apps across fintech, crypto, and marketplace — reaching 40K+ users.",
   keywords: [
+    "Ibukun Agboola",
+    "highbeek",
     "React Native",
     "Frontend Engineer",
+    "Software Engineer",
     "TypeScript",
     "Next.js",
     "Fintech",
     "Mobile Developer",
+    "Squareme",
+    "Squareme developer",
     "Lagos",
+    "Nigeria",
   ],
-  authors: [{ name: "Ibukun Agboola Peter" }],
+  authors: [{ name: "Ibukun Agboola Peter", url: "https://highbeek.dev" }],
+  verification: {
+    google: "t-LYO0kGCzZoBaL0K--MPVOh72vsxEdoy8N3qsD3y7E",
+  },
   openGraph: {
-    title: "Ibukun Agboola | Senior React Native & Frontend Engineer",
+    title: "Ibukun Agboola | Software Engineer",
     description:
-      "Senior React Native & Frontend Engineer building scalable fintech and marketplace apps.",
+      "I build mobile and web products that scale. 4+ years shipping React Native and frontend apps across fintech, crypto, and marketplace — reaching 40K+ users.",
     type: "website",
   },
 };
