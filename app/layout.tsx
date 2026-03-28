@@ -4,6 +4,7 @@ import "./globals.css";
 import Cursor from "@/components/Cursor";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -72,6 +73,7 @@ export default function RootLayout({
           </div>
           <Navbar />
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
